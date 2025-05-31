@@ -1,0 +1,9 @@
+{
+	"name": "df-ralph-tests",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cb40e111-c187-4213-96be-5aaecaa28a79",
+		"tenantId": "cae8cd00-d24b-4260-8390-82f402ff45b5"
+	}
+}
