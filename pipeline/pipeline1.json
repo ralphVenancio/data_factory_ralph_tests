@@ -1,0 +1,395 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "nome_parlamentar",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nome_parlamentar",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cpf",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cpf",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "id_deputado",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "id_deputado",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ano_legislatura",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ano_legislatura",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "sigla_uf",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sigla_uf",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "sigla_partido",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "sigla_partido",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "id_legislatura",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "id_legislatura",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "categoria_despesa",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "categoria_despesa",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "subcategoria_despesa",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "subcategoria_despesa",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "fornecedor",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "fornecedor",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cnpj_cpf_fornecedor",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cnpj_cpf_fornecedor",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "numero_documento_fiscal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_documento_fiscal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "tipo_documento",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "tipo_documento",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ano_competencia",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ano_competencia",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mes_competencia",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "mes_competencia",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "data_emissao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_emissao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "valor_documento",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "valor_documento",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "valor_retido",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "valor_retido",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "valor_liquido",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "valor_liquido",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "numero_parcela",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "numero_parcela",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "nome_passageiro",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "nome_passageiro",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "descricao_passagem_aerea",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "descricao_passagem_aerea",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "data_pagamento_restituicao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_pagamento_restituicao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "valor_restituicao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "valor_restituicao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "url_documento",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "url_documento",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Analise_Camara",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Workspace/Users/ralph.venancio.cursos@gmail.com/PySpark - Data from uploaded file"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
